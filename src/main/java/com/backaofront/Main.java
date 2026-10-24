@@ -8,7 +8,7 @@ public class Main{
 		 String nome;
 
 		System.out.println("-Registrar Colaborador(a) Padrão-");
-		System.out.println("Registre o nome: ");
+		System.out.println("Registre o nome completo: ");
 		nome = input.nextLine();
 		System.out.println("Registre o número de registro: ");
 		registro = input.nextInt();
