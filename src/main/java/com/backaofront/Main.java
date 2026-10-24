@@ -7,7 +7,7 @@ public class Main{
 		 int registro;
 		 String nome;
 
-		System.out.println("-Registrar Colaborador Padrão-");
+		System.out.println("-Registrar Colaborador(a) Padrão-");
 		System.out.println("Registre o nome: ");
 		nome = input.nextLine();
 		System.out.println("Registre o número de registro: ");
@@ -25,5 +25,4 @@ public class Main{
 		// Proximo passo é criar um array ou arrayList para armazenar em lista
 	}
 }
-
 // Onde nosso codigo vai apresentar todas as opções...
