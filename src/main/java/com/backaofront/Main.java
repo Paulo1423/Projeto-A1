@@ -61,7 +61,7 @@ public class Main{
 								 "\nPercentual de comissão: " + colaboradorC.comissao + "%" +
 								 "\nNovo Colaborador(a) comissionado registrado." +
 								 "\n------------------------------");
-				 // Resolver situação do símbolo de porcentagem da comissão e as casas decimais do valor de vendas
+				 // Resolver situação do símbolo de porcentagem da comissão
 				 break;
 		 }
 		// Proximo passo é criar um array ou arrayList para armazenar em lista
