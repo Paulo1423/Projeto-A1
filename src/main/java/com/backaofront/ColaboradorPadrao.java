@@ -5,9 +5,9 @@ public class ColaboradorPadrao {
 	String nome;
 
 	// construtor
-	ColaboradorPadrao(int registro, String nome){
-		this.registro = registro;
+	ColaboradorPadrao(String nome, int registro){
 		this.nome = nome;
+		this.registro = registro;
 	}
 
 }
