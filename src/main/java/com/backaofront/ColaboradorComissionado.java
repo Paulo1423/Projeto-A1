@@ -5,7 +5,7 @@ public class ColaboradorComissionado {
 	double valorVendas;
 	String nome;
 
-	ColaboradorComissionado(String nome, int registro, double valorVendas, int comissao){
+	ColaboradorComissionado(String nome, int registro, double valorVendas, int quantidadePeças){
 		this.nome = nome;
 		this.registro = registro;
 		this.valorVendas = valorVendas;

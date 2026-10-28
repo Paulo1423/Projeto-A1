@@ -10,7 +10,7 @@ public class Main{
 
 		 System.out.println("1 - Cadastrar Colaborador(a) Padrão" +
 						 "\n2 - Cadastrar Colaborador(a) Comissionado" +
-						 "\n" +
+						 "\n3 - Cadastrar Colaborador(a) Produçao" +
 						 "\nEscolha uma opção: ");
 		 escolha = input.nextInt();
 		 input.nextLine();
@@ -61,6 +61,31 @@ public class Main{
 								 "\nPercentual de comissão: " + colaboradorC.comissao + "%" +
 								 "\nNovo Colaborador(a) comissionado registrado." +
 								 "\n------------------------------");
+
+			 case 3:
+				 System.out.println("-Registrar Colaborador(a) De Produçao" +
+						 "\n");
+				 System.out.println("Registre o nome completo: ");
+				 nome = input.nextLine();
+				 System.out.println("Registre o número de registro: ");
+				 registro = input.nextInt();
+				 input.nextLine();
+				 System.out.println("Registre o valor da peça: ");
+				 valorVendas = input.nextDouble();
+				 System.out.println("Registre a quantidade de peças: ");
+				 comissao = input.nextInt();
+				 input.nextLine();
+				 System.out.println("------------------------------");
+
+				 // colaboradorC = colaboradorProduçao
+				 ColaboradorProduçao colaboradorC = new ColaboradorProduçao(nome, registro, valorPeças, quantidadePeças);
+
+				 System.out.println("Colaborador: " + colaboradorC.nome +
+						 "\nRegistro: " + colaboradorC.registro +
+						 "\nValor total da peça: R$" + colaboradorC.valorPeças +
+						 "\nquantidade de peças: " + colaboradorC.quantidadePeças + "%" +
+						 "\nNovo Colaborador(a) produtor registrado." +
+						 "\n------------------------------");
 				 // Resolver situação do símbolo de porcentagem da comissão
 				 break;
 		 }
