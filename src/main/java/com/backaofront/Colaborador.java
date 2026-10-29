@@ -37,7 +37,7 @@ public class Colaborador {
 		this.registro = registro;
 	}
 
-	// Estrutura para exibir os dados do colaborador
+	// Estrutura para exibir os dados do contribuidor
 	public void exibirDados(){
 		System.out.println("Colaborador: " + getNome() +
 						"\nNúmero de registro: " + getRegistro());
