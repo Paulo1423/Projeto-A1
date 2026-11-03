@@ -11,17 +11,19 @@ public class Main{
 
 		 // Para deixar o menu rodando ate o usuário digitar uma opção válida
 		 while(escolhaDigitada == false) {
-			 System.out.println("                  MENU" +
+			 System.out.println("   -Cadastro de Colaborador(a)" +
+							 "\n" +
 							 "\n1 - Cadastrar Colaborador(a) Padrão" +
 							 "\n2 - Cadastrar Colaborador(a) Comissionado" +
 							 "\n3 - Cadastrar Colaborador(a) Produçao" +
+							 "\n0 - Sair do programa" +
 							 "\nEscolha uma opção: ");
 			 escolha = input.nextInt();
 			 input.nextLine();
 			 System.out.println("");
 
 			 // Verificação se o usuário digitou um valor dentro do esperado
-			 if (escolha >= 1 && escolha <= 3) {
+			 if (escolha >= 0 && escolha <= 3) {
 				 escolhaDigitada = true;
 
 				 switch (escolha) {
@@ -50,6 +52,7 @@ public class Main{
 								 System.out.println("------------------------------");
 							} else {
 								 System.out.println("Fechando programa...");
+								 System.exit(0);
 							}
 
 						 break;
@@ -73,6 +76,18 @@ public class Main{
 						 ColaboradorComissionado colaboradorC = new ColaboradorComissionado(nome, registro, valorVendas, comissao);
 
 						 colaboradorC.exibirDados();
+
+						 System.out.println("\nDeseja voltar ao menu principal?" +
+										 "\n1(Sim) 2(Não)");
+						 int voltar2 = input.nextInt();
+						 if(voltar2== 1){
+							 escolhaDigitada = false;
+							 System.out.println("------------------------------");
+						 } else {
+							 System.out.println("Fechando programa...");
+							 System.exit(0);
+						 }
+
 						 break;
 
 					 case 3:
@@ -94,6 +109,23 @@ public class Main{
 						 ColaboradorProducao colaboradorP = new ColaboradorProducao(nome, registro, valorPecas, quantidadePecas);
 
 						 colaboradorP.exibirDados();
+
+						 System.out.println("\nDeseja voltar ao menu principal?" +
+										 "\n1(Sim) 2(Não)");
+						 int voltar3 = input.nextInt();
+						 if(voltar3 == 1){
+							 escolhaDigitada = false;
+							 System.out.println("------------------------------");
+						 } else {
+							 System.out.println("Fechando programa...");
+							 System.exit(0);
+						 }
+
+						 break;
+
+					 case 0:
+						 System.out.println("Fechando programa...");
+						 System.exit(0);
 						 break;
 				 }
 
@@ -105,6 +137,7 @@ public class Main{
 
 		 }
 		// Proximo passo é criar um array ou arrayList para armazenar em lista
+		input.close();
 	}
 }
 // Onde nosso codigo vai apresentar todas as opções...
