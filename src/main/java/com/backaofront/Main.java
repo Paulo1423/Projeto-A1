@@ -79,8 +79,8 @@ public class Main{
 
 						 System.out.println("\nDeseja voltar ao menu principal?" +
 										 "\n1(Sim) 2(Não)");
-						 int voltar = input.nextInt();
-						 if(voltar == 1){
+						 int voltar2 = input.nextInt();
+						 if(voltar2== 1){
 							 escolhaDigitada = false;
 							 System.out.println("------------------------------");
 						 } else {
@@ -112,8 +112,8 @@ public class Main{
 
 						 System.out.println("\nDeseja voltar ao menu principal?" +
 										 "\n1(Sim) 2(Não)");
-						 int voltar = input.nextInt();
-						 if(voltar == 1){
+						 int voltar3 = input.nextInt();
+						 if(voltar3 == 1){
 							 escolhaDigitada = false;
 							 System.out.println("------------------------------");
 						 } else {
