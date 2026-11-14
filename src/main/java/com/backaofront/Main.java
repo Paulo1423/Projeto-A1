@@ -122,6 +122,8 @@ public class Main{
 							 System.out.println("------------------------------");
 						 }
 
+						 escolhaDigitada = voltarMenu(input);
+
 						 break;
 					 case 5:
 						 System.out.println("-Resumo Da Folha-");
