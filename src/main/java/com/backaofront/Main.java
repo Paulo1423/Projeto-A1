@@ -104,6 +104,8 @@ public class Main{
 						 // colaboradorP = colaboradorProducao
 						 ColaboradorProducao colaboradorP = new ColaboradorProducao(nome, registro, valorPecas, quantidadePecas);
 
+						 listaColaboradores.add(colaboradorP);
+
 						 colaboradorP.exibirDados();
 						 System.out.println("Novo Colaborador(a) produtor registrado." +
 										 "\n------------------------------");
