@@ -41,7 +41,8 @@ public class Colaborador {
 	public void exibirDados(){
 		System.out.println("Colaborador: " + getNome() +
 						"\nNúmero de registro: " + getRegistro());
-		System.out.printf("Salário final: R$%.2f", calcularSalarioFinal());
+		System.out.printf("Salario Base: %.2f", SalarioBase);
+		System.out.printf("\nSalário final: R$%.2f", calcularSalarioFinal());
 	}
 
 }

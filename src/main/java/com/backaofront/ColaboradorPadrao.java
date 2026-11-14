@@ -11,8 +11,7 @@ public class ColaboradorPadrao extends Colaborador{
 	@Override
 	public void exibirDados() {
 		super.exibirDados();
-		System.out.println("\nNovo Colaborador(a) Padrão registrado." +
-						"\n------------------------------");
+		System.out.println("\nTipo: Colaborador Padrão");
 	}
 
 }

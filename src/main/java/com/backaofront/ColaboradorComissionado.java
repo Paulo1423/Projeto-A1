@@ -21,9 +21,8 @@ public class ColaboradorComissionado extends Colaborador{
 	public void exibirDados() {
 		super.exibirDados();
 		System.out.printf("\nValor de vendas: R$%.2f", valorVendas);
-		System.out.println("\nPercentual de comissão: " + comissao + "%" +
-						"\nNovo Colaborador(a) comissionado registrado." +
-						"\n------------------------------");
+		System.out.println("\nPercentual de comissão: " + comissao + "%");
+		System.out.println("\nTipo: Colaborador Comissionado");
 	}
 
 }

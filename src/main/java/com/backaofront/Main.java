@@ -1,4 +1,5 @@
 package com.backaofront;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main{
@@ -8,6 +9,8 @@ public class Main{
 		 double valorVendas, valorPecas;
 		 String nome;
 		 boolean escolhaDigitada = false;
+		 // Usando o arrayList para construir uma lista de colaboradores
+		 ArrayList<Colaborador> listaColaboradores = new ArrayList<>();
 
 		 // Para deixar o menu rodando ate o usuário digitar uma opção válida
 		 while(escolhaDigitada == false) {
@@ -16,6 +19,8 @@ public class Main{
 							 "\n1 - Cadastrar Colaborador(a) Padrão" +
 							 "\n2 - Cadastrar Colaborador(a) Comissionado" +
 							 "\n3 - Cadastrar Colaborador(a) Produçao" +
+							 "\n4 - Folha de pagamentos" +
+							 "\n5 - Resumo Da Folha De Pagamento" +
 							 "\n0 - Sair do programa" +
 							 "\nEscolha uma opção: ");
 			 escolha = input.nextInt();
@@ -23,7 +28,7 @@ public class Main{
 			 System.out.println("");
 
 			 // Verificação se o usuário digitou um valor dentro do esperado
-			 if (escolha >= 0 && escolha <= 3) {
+			 if (escolha >= 0 && escolha <= 5) {
 				 escolhaDigitada = true;
 
 				 switch (escolha) {
@@ -40,20 +45,16 @@ public class Main{
 						 // Metodo para adicionar os valores do usuario usando o construtor e objeto
 						 ColaboradorPadrao colaborador = new ColaboradorPadrao(nome, registro);
 
+						 // Adicionando o colaborador na lista
+						 listaColaboradores.add(colaborador);
+
 						 // Mostro para o usuario as informações que ele inserir
 						 colaborador.exibirDados();
+						 System.out.println("Novo Colaborador(a) Padrão registrado." +
+						 "\n------------------------------");
 
-						 // Teste para caso o usuário quiser voltar ao menu principal
-						 System.out.println("\nDeseja voltar ao menu principal?" +
-										 "\n1(Sim) 2(Não)");
-						 int voltar = input.nextInt();
-						 	if(voltar == 1){
-								 escolhaDigitada = false;
-								 System.out.println("------------------------------");
-							} else {
-								 System.out.println("Fechando programa...");
-								 System.exit(0);
-							}
+						 // Metodo para caso o usuário quiser voltar ao menu principal
+						 escolhaDigitada = voltarMenu(input);
 
 						 break;
 
@@ -75,18 +76,13 @@ public class Main{
 						 // colaboradorC = colaboradorComissionado
 						 ColaboradorComissionado colaboradorC = new ColaboradorComissionado(nome, registro, valorVendas, comissao);
 
-						 colaboradorC.exibirDados();
+						 listaColaboradores.add(colaboradorC);
 
-						 System.out.println("\nDeseja voltar ao menu principal?" +
-										 "\n1(Sim) 2(Não)");
-						 int voltar2 = input.nextInt();
-						 if(voltar2== 1){
-							 escolhaDigitada = false;
-							 System.out.println("------------------------------");
-						 } else {
-							 System.out.println("Fechando programa...");
-							 System.exit(0);
-						 }
+						 colaboradorC.exibirDados();
+						 System.out.println("Novo Colaborador(a) comissionado registrado." +
+										 "\n------------------------------");
+
+						 escolhaDigitada = voltarMenu(input);
 
 						 break;
 
@@ -109,20 +105,40 @@ public class Main{
 						 ColaboradorProducao colaboradorP = new ColaboradorProducao(nome, registro, valorPecas, quantidadePecas);
 
 						 colaboradorP.exibirDados();
+						 System.out.println("Novo Colaborador(a) produtor registrado." +
+										 "\n------------------------------");
 
-						 System.out.println("\nDeseja voltar ao menu principal?" +
-										 "\n1(Sim) 2(Não)");
-						 int voltar3 = input.nextInt();
-						 if(voltar3 == 1){
-							 escolhaDigitada = false;
+						 escolhaDigitada = voltarMenu(input);
+
+						 break;
+					 case 4:
+						 // Mostra todas as informações de todos os colaboradores
+						 System.out.println("-Folha De Pagamento-\n");
+						 for(int i = 0; i < listaColaboradores.size(); i++) {
+							 // Colaborador colaboradorAtual = listaColaboradores.get(i);
+							 listaColaboradores.get(i).exibirDados();
 							 System.out.println("------------------------------");
-						 } else {
-							 System.out.println("Fechando programa...");
-							 System.exit(0);
 						 }
 
 						 break;
+					 case 5:
+						 System.out.println("-Resumo Da Folha-");
 
+						 // Mostra a quantidade de colaboradores que foram registrados na lista
+						 System.out.println("Quantidade Total De Colaboradores: " + listaColaboradores.size());
+
+						 double somaSalarios = 0;
+						 for(int i = 0; i < listaColaboradores.size(); i++){
+								 somaSalarios += listaColaboradores.get(i).calcularSalarioFinal();
+						 }
+						 System.out.printf("Soma total da folha de pagamento: %.2f", somaSalarios);
+
+						 System.out.printf("\nMedia Salarial Dos Colaboradores: %.2f", somaSalarios / listaColaboradores.size());
+						 System.out.println("\n------------------------------");
+
+						 escolhaDigitada = voltarMenu(input);
+
+						 break;
 					 case 0:
 						 System.out.println("Fechando programa...");
 						 System.exit(0);
@@ -136,8 +152,22 @@ public class Main{
 			 }
 
 		 }
-		// Proximo passo é criar um array ou arrayList para armazenar em lista
 		input.close();
 	}
+	// Onde foi criado o metodo para voltar a seleção
+	public static boolean voltarMenu(Scanner input) {
+		System.out.println("\nDeseja voltar ao menu principal?" +
+						"\n1(Sim) 2(Não)");
+		int voltar = input.nextInt();
+		if(voltar == 1){
+			System.out.println("------------------------------");
+			return false;
+		} else {
+			System.out.println("Fechando programa...");
+			System.exit(0);
+			return true;
+		}
+	}
+
 }
 // Onde nosso codigo vai apresentar todas as opções...

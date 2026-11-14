@@ -21,9 +21,8 @@ public class ColaboradorProducao extends Colaborador{
     public void exibirDados() {
         super.exibirDados();
         System.out.printf("\nValor total por peça: R$%.2f", valorPecas);
-        System.out.println("\nQuantidade de peças vendidas: " + quantidadePecas +
-                "\nNovo Colaborador(a) produtor registrado." +
-                "\n------------------------------");
+        System.out.println("\nQuantidade de peças vendidas: " + quantidadePecas);
+        System.out.println("\nTipo: Colaborador Produção");
     }
 }
 // Número de registro = Matrícula - variável: registro
